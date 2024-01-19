@@ -29,4 +29,12 @@
   .backgroundGradient {
     @apply bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#69939c] via-[#49a2b6] to-[#18bde2] blur-3xl opacity-25;
   }
+
+  .formInputField {
+    @apply p-2 w-full bg-transparent border-b outline-none focus:border-primary focus:text-primary focus:placeholder:text-primary;
+  }
+
+  .formTextareaField {
+    @apply p-2 w-full bg-transparent border-b outline-none focus:border-primary focus:text-primary focus:placeholder:text-primary;
+  }
 }

@@ -1,3 +1,4 @@
+import BookingForm from './components/BookingForm';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 
@@ -9,7 +10,7 @@ function App() {
         <Hero />
       </section>
       <section id='booking' className='h-screen'>
-        Booking Section
+        <BookingForm />
       </section>
       <section id='testimonials' className='h-screen'>
         Testimonials
