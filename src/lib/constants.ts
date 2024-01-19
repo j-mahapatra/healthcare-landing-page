@@ -72,23 +72,23 @@ export const userTestimonials = [
     id: 3,
     name: 'Catherine White',
     age: 28,
-    problem: 'Anxiety and stress relief',
+    problem: 'Feet injury',
     designation: 'Graphic Designer',
     rating: 5,
     image: userProfileImage,
     review:
-      'Invaluable for anxiety! Meditation exercises and mood tracking made a noticeable difference in my overall well-being.',
+      'Invaluable for recovering from months of post-injury pain! Great service.',
   },
   {
     id: 4,
     name: 'David Miller',
     age: 50,
-    problem: 'Diabetes management',
+    problem: 'Elbow pain',
     designation: 'Teacher',
     rating: 5,
     image: userProfileImage,
     review:
-      'Simplified diabetes management! Blood sugar tracking and medication reminders are incredibly useful.',
+      'Simplified exercise management! treatment methods are incredibly useful.',
   },
   {
     id: 5,
@@ -98,18 +98,17 @@ export const userTestimonials = [
     designation: 'Fitness Trainer',
     rating: 5,
     image: userProfileImage,
-    review:
-      'A must-have for fitness enthusiasts! Diverse workout plans and community features enhance the fitness journey.',
+    review: 'A must-have for people with back problems! Works like a charm.',
   },
   {
     id: 6,
     name: 'Frank Wilson',
     age: 55,
-    problem: 'Sleep quality improvement',
+    problem: 'Neck pain',
     designation: 'Retired',
     rating: 5,
     image: userProfileImage,
     review:
-      'A savior for sleep! Personalized tips and sleep tracking by Fix Health significantly improved the quality of my rest.',
+      'Years of neck pain gone in a couple of months. Thank you Fix Health!',
   },
 ];
