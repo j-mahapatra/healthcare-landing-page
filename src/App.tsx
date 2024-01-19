@@ -1,6 +1,7 @@
 import BookingForm from './components/BookingForm';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
+import Testimonials from './components/Testimonials';
 
 function App() {
   return (
@@ -9,11 +10,11 @@ function App() {
       <section id='hero' className='h-screen'>
         <Hero />
       </section>
-      <section id='booking' className='h-screen'>
+      <section id='booking' className='pb-16'>
         <BookingForm />
       </section>
-      <section id='testimonials' className='h-screen'>
-        Testimonials
+      <section id='testimonials'>
+        <Testimonials />
       </section>
     </div>
   );
