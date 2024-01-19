@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
 
 import { navbarLinks } from '../lib/constants';
-import { NavbarItem } from '../vite-env';
+import { NavbarItemType } from '../vite-env';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -39,7 +39,7 @@ export default function Navbar() {
             isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {navbarLinks.map((item: NavbarItem) => (
+          {navbarLinks.map((item: NavbarItemType) => (
             <a
               key={item.label}
               href={item.href}
