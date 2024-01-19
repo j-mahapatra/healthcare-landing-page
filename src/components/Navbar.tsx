@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <div className='sticky flex w-full p-5'>
+    <div className='sticky top-0 flex w-full p-5 z-20'>
       <div className='flexCenter'>
         <img src='logo.svg' alt='Fix Health' className='w-[135px]' />
       </div>

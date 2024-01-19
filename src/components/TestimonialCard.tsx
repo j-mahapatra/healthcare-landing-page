@@ -16,7 +16,7 @@ export default function TestimonialCard({
   }
 
   return (
-    <div className='relative flexCenter w-full basis-[100%] sm:basis-[30%] blackGradient p-2'>
+    <div className='relative flexCenter w-full basis-[100%] sm:basis-[30%] blackGradient p-2 rounded-xl'>
       <div className='flex flex-col space-y-5 w-full h-max m-5 rounded-md p-2'>
         <p className='text-white text-sm text-center sm:text-left'>
           <span className='text-lg'>{name}</span>, {age}

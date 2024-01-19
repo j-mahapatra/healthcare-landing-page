@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='bg-secondary'>
       <Navbar />
-      <section id='hero' className='h-screen'>
+      <section id='hero'>
         <Hero />
       </section>
       <section id='booking' className='pb-16'>

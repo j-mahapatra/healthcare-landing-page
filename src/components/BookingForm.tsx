@@ -15,7 +15,7 @@ export default function BookingForm() {
       <p className='text-white text-2xl text-center sm:text-left'>
         Book an Appointment for <span className='text-primary'>free</span>
       </p>
-      <div className='flexCenter w-full py-8 px-16 max-w-xl rounded-md blackGradient'>
+      <div className='flexCenter w-full py-24 px-16 max-w-xl rounded-md blackGradient'>
         <form
           onSubmit={(e) => {
             e.preventDefault();
