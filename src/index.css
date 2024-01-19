@@ -9,4 +9,16 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
   }
+
+  .flexCenter {
+    @apply flex justify-center items-center;
+  }
+
+  .underlineEffect {
+    @apply relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-primary after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-200 after:origin-center;
+  }
+
+  .blackGradient {
+    @apply bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-secondary;
+  }
 }
