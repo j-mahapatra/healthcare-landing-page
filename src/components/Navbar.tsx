@@ -13,7 +13,7 @@ export default function Navbar() {
         <img src='logo.svg' alt='Fix Health' className='w-[135px]' />
       </div>
       <div className='hidden sm:flex space-x-5 flex-1 text-white justify-end items-center'>
-        {navbarLinks.map((item: NavbarItem) => (
+        {navbarLinks.map((item: NavbarItemType) => (
           <a
             key={item.label}
             href={item.href}
