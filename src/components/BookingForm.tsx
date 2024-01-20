@@ -95,8 +95,7 @@ export default function BookingForm() {
               I have previous experience with physiotherapy.
             </label>
           )}
-          <label htmlFor='city' className='px-2 text-gray-400'>
-            City
+          <label htmlFor='city' className='text-gray-400'>
             <select
               name='cities'
               id='city'
@@ -104,6 +103,7 @@ export default function BookingForm() {
               onChange={(e) => setCity(e.target.value)}
               className='mx-2 bg-transparent outline-none'
             >
+              <option value=''>Select City</option>
               {cities.map((city: string) => (
                 <option key={city} value={city}>
                   {city}
@@ -117,7 +117,7 @@ export default function BookingForm() {
         Best <span className='text-primary'>Doctors</span> available in your
         city
       </p>
-      <div className='flex flex-wrap gap-5 w-full px-5 justify-around'>
+      <div className='flex flex-wrap gap-5 w-full max-w-3xl px-5 justify-around'>
         {getDoctors(city).map((doctor, index) => (
           <DoctorCard key={index} {...doctor} />
         ))}
