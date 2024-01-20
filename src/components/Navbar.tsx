@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
 
 import { navbarLinks } from '../lib/constants';
@@ -6,9 +6,28 @@ import { NavbarItemType } from '../vite-env';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [changeColor, setChangeColor] = useState<boolean>(false);
+
+  useEffect(() => {
+    const changeNavbarColor = () => {
+      if (window.scrollY >= 800) {
+        setChangeColor(true);
+      } else {
+        setChangeColor(false);
+      }
+    };
+    window.addEventListener('scroll', changeNavbarColor);
+    return () => {
+      window.removeEventListener('scroll', changeNavbarColor);
+    };
+  }, []);
 
   return (
-    <div className='sticky top-0 flex w-full p-5 z-20'>
+    <div
+      className={`sticky top-0 flex w-full p-5 z-20 ${
+        changeColor && 'bg-secondary'
+      }`}
+    >
       <div className='flexCenter'>
         <img src='logo.svg' alt='Fix Health' className='w-[135px]' />
       </div>
