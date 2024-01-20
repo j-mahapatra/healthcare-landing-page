@@ -19,7 +19,12 @@ export default function Hero() {
         </a>
       </div>
       <div className='relative flexCenter w-fit aspect-w-16 aspect-h-9'>
-        <img src='doctor-image.png' alt='Hero Image' className='w-full z-10' />
+        <img
+          src='doctor-image.png'
+          alt='Hero Image'
+          className='w-full z-10'
+          loading='lazy'
+        />
         <div className='absolute h-full w-full backgroundGradient' />
       </div>
     </div>
