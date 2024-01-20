@@ -23,3 +23,11 @@ export type TestimonialType = {
   image: string;
   review: string;
 };
+
+export type DoctorType = {
+  name: string;
+  gender: string;
+  specialty: string;
+  city: string;
+  image: string;
+};

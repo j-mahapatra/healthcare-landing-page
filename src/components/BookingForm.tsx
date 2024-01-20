@@ -1,4 +1,12 @@
 import { useState } from 'react';
+import { cities, doctors } from '../lib/constants';
+import { DoctorType } from '../vite-env';
+import DoctorCard from './DoctorCard';
+
+function getDoctors(city: string): DoctorType[] {
+  const filteredDoctors = doctors.filter((doctor) => doctor.city === city);
+  return filteredDoctors;
+}
 
 export default function BookingForm() {
   const [name, setName] = useState<string>('');
@@ -12,7 +20,7 @@ export default function BookingForm() {
 
   return (
     <div className='flexCenter w-full flex-col space-y-8 p-5'>
-      <p className='text-white text-2xl text-center sm:text-left'>
+      <p className='text-white text-4xl text-center sm:text-left mt-20'>
         Book an Appointment for <span className='text-primary'>free</span>
       </p>
       <div className='flexCenter w-full py-24 px-16 max-w-xl rounded-md blackGradient'>
@@ -52,16 +60,7 @@ export default function BookingForm() {
               className='formInputField'
             />
           </label>
-          <label htmlFor='city'>
-            <input
-              type='text'
-              id='city'
-              placeholder='City'
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              className='formInputField'
-            />
-          </label>
+
           <label htmlFor='company'>
             <input
               type='text'
@@ -96,7 +95,32 @@ export default function BookingForm() {
               I have previous experience with physiotherapy.
             </label>
           )}
+          <label htmlFor='city' className='px-2 text-gray-400'>
+            City
+            <select
+              name='cities'
+              id='city'
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              className='mx-2 bg-transparent outline-none'
+            >
+              {cities.map((city: string) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+          </label>
         </form>
+      </div>
+      <p className='text-white text-4xl text-center sm:text-left'>
+        Best <span className='text-primary'>Doctors</span> available in your
+        city
+      </p>
+      <div className='flex flex-wrap gap-5 w-full px-5 justify-around'>
+        {getDoctors(city).map((doctor, index) => (
+          <DoctorCard key={index} {...doctor} />
+        ))}
       </div>
     </div>
   );
