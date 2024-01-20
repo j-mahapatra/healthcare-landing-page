@@ -7,7 +7,7 @@ export default function Testimonials() {
   return (
     <div className='flexCenter p-5 w-full'>
       <div className='flexCenter flex-col w-full'>
-        <p className='text-white text-4xl'>
+        <p className='text-white text-4xl text-center sm:text-left'>
           Our <span className='text-primary'>Achievements</span>
         </p>
         <div className='flex w-full my-12 max-w-3xl space-x-5 justify-between'>
@@ -20,7 +20,7 @@ export default function Testimonials() {
             />
           ))}
         </div>
-        <p className='text-white text-4xl my-12'>
+        <p className='text-white text-4xl my-12 text-center sm:text-left'>
           Experiences shared by our
           <span className='text-primary'>{' Patients'}</span>
         </p>
