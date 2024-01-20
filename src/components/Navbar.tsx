@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className='flexCenter'>
         <img src='logo.svg' alt='Fix Health' className='w-[135px]' />
       </div>
-      <div className='hidden sm:flex space-x-5 flex-1 text-white justify-end items-center'>
+      <div className='hidden sm:flex space-x-5 flex-1 text-white justify-end items-center sm:mr-16'>
         {navbarLinks.map((item: NavbarItemType) => (
           <a
             key={item.label}

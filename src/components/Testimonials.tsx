@@ -21,7 +21,8 @@ export default function Testimonials() {
           ))}
         </div>
         <p className='text-white text-4xl my-12'>
-          What our <span className='text-primary'>Users</span> say about us
+          Experiences shared by our
+          <span className='text-primary'>{' Patients'}</span>
         </p>
         <div className='flex w-full flex-wrap justify-between gap-2'>
           {userTestimonials.map((testimonial: TestimonialType) => (

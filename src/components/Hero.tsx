@@ -8,6 +8,9 @@ export default function Hero() {
         <p className='text-6xl sm:text-7xl textGradient text-center sm:text-left'>
           pain free
         </p>
+        <p className='text-primary text-center sm:text-left my-8'>
+          60+ Expert Physiotherapists for 250+ Conditions
+        </p>
         <a
           href='#booking'
           className='flex w-fit box-border p-3 my-8 text-white hover:bg-primary hover:text-secondary transition-all border border-primary rounded-full'
