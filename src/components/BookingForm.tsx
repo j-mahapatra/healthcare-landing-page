@@ -4,6 +4,7 @@ import { DoctorType } from '../vite-env';
 
 import { cities, doctors } from '../lib/constants';
 import DoctorCard from './DoctorCard';
+import toast from 'react-hot-toast';
 
 function getDoctors(city: string, cityFromURL?: string | null): DoctorType[] {
   const filteredDoctors = doctors.filter((doctor) => {
@@ -28,6 +29,9 @@ export default function BookingForm() {
   const [previousPhysioExperience, setPreviousPhysioExperience] =
     useState<boolean>(false);
   const [cityFromURL, setCityFromURL] = useState<string | null>();
+  const [selectedDoctor, setSelectedDoctor] = useState<DoctorType>();
+  const [isAppointmentBooked, setIsAppointmentBooked] =
+    useState<boolean>(false);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -40,7 +44,7 @@ export default function BookingForm() {
       <p className='text-white text-4xl text-center sm:text-left mt-20'>
         Book an Appointment for <span className='text-primary'>free</span>
       </p>
-      <div className='flexCenter w-full py-24 px-16 max-w-xl rounded-md blackGradient'>
+      <div className='flexCenter w-full py-16 px-16 max-w-xl rounded-md blackGradient'>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -120,7 +124,7 @@ export default function BookingForm() {
               onChange={(e) => {
                 setCity(e.target.value);
               }}
-              className='mx-2 bg-transparent outline-none'
+              className='w-full mx-2 bg-transparent outline-none'
             >
               <option value=''>Select City</option>
               {cities.map((city: string) => (
@@ -132,15 +136,63 @@ export default function BookingForm() {
           </label>
         </form>
       </div>
-      <p className='text-white text-4xl text-center sm:text-left'>
-        Best <span className='text-primary'>Doctors</span> available in your
-        city
-      </p>
+      {(city || cityFromURL) && (
+        <p className='text-white text-4xl text-center sm:text-left'>
+          Choose from best <span className='text-primary'>Doctors</span>{' '}
+          available in your city
+        </p>
+      )}
       <div className='flex flex-wrap gap-5 w-full max-w-3xl px-5 justify-around'>
         {getDoctors(city, cityFromURL).map((doctor, index) => (
-          <DoctorCard key={index} {...doctor} />
+          <DoctorCard
+            key={index}
+            {...doctor}
+            onClick={() => {
+              setSelectedDoctor(doctor);
+            }}
+          />
         ))}
       </div>
+      {selectedDoctor && (
+        <button
+          disabled={isAppointmentBooked}
+          onClick={() => {
+            setIsAppointmentBooked(true);
+            toast.success(`Appointment booked with ${selectedDoctor.name}`, {
+              style: {
+                border: '1px solid #52c1da',
+                padding: '16px',
+                color: '#52c1da',
+                textAlign: 'center',
+                backgroundColor: '#050505',
+              },
+              iconTheme: {
+                primary: '#52c1da',
+                secondary: '#FFFAEE',
+              },
+            });
+          }}
+          className={`rounded-full text-white hover:text-secondary bg-transparent hover:bg-primary transition-colors p-5 border border-primary ${
+            isAppointmentBooked && 'bg-primary text-white text-secondary'
+          }`}
+        >
+          {isAppointmentBooked ? (
+            <p className='text-center'>
+              Appointment booked with
+              <span className='text-center font-bold'>
+                {' ' + selectedDoctor.name}
+              </span>
+            </p>
+          ) : (
+            <p className='text-center'>
+              Book Appointment with
+              <span className='text-center font-bold'>
+                {' ' + selectedDoctor.name}
+              </span>
+            </p>
+          )}
+        </button>
+      )}
     </div>
   );
 }

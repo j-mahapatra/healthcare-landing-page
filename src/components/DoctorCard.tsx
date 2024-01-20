@@ -1,13 +1,23 @@
 import { DoctorType } from '../vite-env';
 
+type OnClickType = {
+  onClick: () => void;
+};
+
+type DoctorCardType = DoctorType & OnClickType;
+
 export default function DoctorCard({
   name,
   gender,
   specialty,
   image,
-}: DoctorType) {
+  onClick,
+}: DoctorCardType) {
   return (
-    <div className='flexCenter space-x-2 text-white w-max sm:w-fit blackGradient p-5 rounded-md hover:shadow-primary'>
+    <div
+      onClick={onClick}
+      className='flexCenter space-x-2 text-white w-max sm:w-fit blackGradient p-5 rounded-md hover:scale-105 transition-transform hover:shadow hover:shadow-primary cursor-pointer'
+    >
       <div className='flex flex-col w-max'>
         <p className='w-max text-xl text-primary'>{name}</p>
         <p className='text-xs mb-5'>{gender}</p>
