@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
 
 import { navbarLinks } from '../lib/constants';
@@ -24,13 +25,15 @@ export default function Navbar() {
 
   return (
     <div
-      className={`sticky top-0 flex w-full p-5 z-20 ${
+      className={`fixed top-0 flex w-full p-5 z-20 ${
         changeColor && 'bg-secondary'
       }`}
     >
-      <div className='flexCenter'>
-        <img src='logo.svg' alt='Fix Health' className='w-[135px]' />
-      </div>
+      <Link to='/'>
+        <div className='flexCenter'>
+          <img src='logo.svg' alt='Fix Health' className='w-[135px]' />
+        </div>
+      </Link>
       <div className='hidden sm:flex space-x-5 flex-1 text-white justify-end items-center sm:mr-16'>
         {navbarLinks.map((item: NavbarItemType) => (
           <a
@@ -59,13 +62,13 @@ export default function Navbar() {
           }`}
         >
           {navbarLinks.map((item: NavbarItemType) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               className='hover:text-primary transition-colors text-white py-3 px-8'
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -33,7 +33,6 @@ export default function BookingForm() {
     const queryParams = new URLSearchParams(location.search);
     const value = queryParams.get('city');
     setCityFromURL(value);
-    console.log(value);
   }, []);
 
   return (

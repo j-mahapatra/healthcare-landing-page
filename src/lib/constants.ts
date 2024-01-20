@@ -6,24 +6,22 @@ import {
 
 import userProfileImage from '../../public/user-profile-image.png';
 
-UserIcon;
-
 export const navbarLinks = [
   {
     label: 'Home',
-    href: '',
+    href: '/',
   },
   {
     label: 'Services',
-    href: '',
+    href: '/',
   },
   {
     label: 'Blogs',
-    href: '',
+    href: '/',
   },
   {
     label: 'About',
-    href: '',
+    href: '/',
   },
 ];
 
