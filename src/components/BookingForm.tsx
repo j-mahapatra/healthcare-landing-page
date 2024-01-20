@@ -1,14 +1,24 @@
-import { useState } from 'react';
-import { cities, doctors } from '../lib/constants';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { DoctorType } from '../vite-env';
+
+import { cities, doctors } from '../lib/constants';
 import DoctorCard from './DoctorCard';
 
-function getDoctors(city: string): DoctorType[] {
-  const filteredDoctors = doctors.filter((doctor) => doctor.city === city);
+function getDoctors(city: string, cityFromURL?: string | null): DoctorType[] {
+  const filteredDoctors = doctors.filter((doctor) => {
+    if (cityFromURL) {
+      return doctor.city === cityFromURL;
+    }
+    return doctor.city === city;
+  });
+
   return filteredDoctors;
 }
 
 export default function BookingForm() {
+  const location = useLocation();
+
   const [name, setName] = useState<string>('');
   const [contactNumber, setContactNumber] = useState<string>('');
   const [age, setAge] = useState<number | string>('');
@@ -17,6 +27,14 @@ export default function BookingForm() {
   const [complaints, setComplaints] = useState<string>('');
   const [previousPhysioExperience, setPreviousPhysioExperience] =
     useState<boolean>(false);
+  const [cityFromURL, setCityFromURL] = useState<string | null>();
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const value = queryParams.get('city');
+    setCityFromURL(value);
+    console.log(value);
+  }, []);
 
   return (
     <div className='flexCenter w-full flex-col space-y-8 p-5'>
@@ -100,7 +118,9 @@ export default function BookingForm() {
               name='cities'
               id='city'
               value={city}
-              onChange={(e) => setCity(e.target.value)}
+              onChange={(e) => {
+                setCity(e.target.value);
+              }}
               className='mx-2 bg-transparent outline-none'
             >
               <option value=''>Select City</option>
@@ -118,7 +138,7 @@ export default function BookingForm() {
         city
       </p>
       <div className='flex flex-wrap gap-5 w-full max-w-3xl px-5 justify-around'>
-        {getDoctors(city).map((doctor, index) => (
+        {getDoctors(city, cityFromURL).map((doctor, index) => (
           <DoctorCard key={index} {...doctor} />
         ))}
       </div>
