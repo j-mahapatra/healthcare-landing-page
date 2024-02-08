@@ -31,7 +31,7 @@ export default function Navbar() {
     >
       <Link to='/'>
         <div className='flexCenter'>
-          <img src='logo.svg' alt='Fix Health' className='w-[135px]' />
+          <img src='logo.png' alt='Fix Health' className='w-[70px]' />
         </div>
       </Link>
       <div className='hidden sm:flex space-x-5 flex-1 text-white justify-end items-center sm:mr-16'>
