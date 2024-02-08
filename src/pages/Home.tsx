@@ -1,6 +1,7 @@
-import BookingForm from './../components/BookingForm';
 import Hero from './../components/Hero';
+import BookingForm from './../components/BookingForm';
 import Testimonials from './../components/Testimonials';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
       </section>
       <section id='testimonials'>
         <Testimonials />
+      </section>
+      <section id='footer'>
+        <Footer />
       </section>
     </div>
   );

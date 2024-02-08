@@ -221,3 +221,10 @@ export const doctors = [
     image: userProfileImage,
   },
 ];
+
+export const footer = {
+  product: ['Blogs', 'Privacy Policy', 'Terms & Conditions'],
+  company: ['About Us', 'Careers', 'Contact'],
+  services: ['Medicine', 'Regular Checkup', 'Scans & Tests', 'Surgery'],
+  socialMedia: ['facebook.svg', 'instagram.svg', 'x.svg', 'linkedin.svg'],
+};
