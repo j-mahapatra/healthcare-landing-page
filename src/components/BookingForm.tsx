@@ -40,7 +40,7 @@ export default function BookingForm() {
   }, []);
 
   return (
-    <div className='flexCenter w-full flex-col space-y-8 p-5'>
+    <div className='flexCenter w-full flex-col space-y-8 p-5 py-6'>
       <p className='text-white text-4xl text-center sm:text-left mt-20'>
         Book an Appointment for <span className='text-primary'>free</span>
       </p>

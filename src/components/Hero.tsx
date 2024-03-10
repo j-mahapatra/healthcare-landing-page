@@ -9,13 +9,13 @@ export default function Hero() {
           pain free
         </p>
         <p className='text-primary text-center sm:text-left my-8'>
-          60+ Expert Physiotherapists for 250+ Conditions
+          50+ Expert Doctors for 2500+ Conditions
         </p>
         <a
           href='#booking'
           className='flex w-fit box-border p-3 my-8 text-white hover:bg-primary hover:text-secondary transition-all border border-primary rounded-full'
         >
-          Book an appointment
+          Book an Appointment
         </a>
       </div>
       <div className='relative flexCenter w-fit aspect-w-16 aspect-h-9'>
